@@ -71,6 +71,7 @@ class CalendarApp(new_toplevel):
         if all_hide is None:
             self.bind("<FocusOut>", lambda event: self.after(700, lambda: self.destroy() if self.focus_get() != self else None))
             self.after(200,self.focus)
+        
 
 
     
@@ -131,6 +132,8 @@ class CalendarApp(new_toplevel):
         if self.command is not None:
             self.command(self.selection)
         if self.all_hide is None:
+            self.destroy()
+        elif self.all_hide:
             self.destroy()
 
 
