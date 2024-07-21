@@ -41,4 +41,4 @@ Contact:
 For any questions or issues, please contact [your email or GitHub issues page].
 """
 
-from .AppCalendar import CalendarApp
+from .AppCalendar import CalendarApp as CTkCalender
