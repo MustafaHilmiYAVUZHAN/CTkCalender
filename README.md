@@ -6,6 +6,10 @@ CTkCalendar is a modern and customizable calendar widget built with Python's `tk
   <img src="https://github.com/MustafaHilmiYAVUZHAN/CTkCalender/blob/main/screenshots/all_hide_None.png?raw=true" alt="all_hide=None" width="30%" />
   <img src="https://github.com/MustafaHilmiYAVUZHAN/CTkCalender/blob/main/screenshots/all_hide_True.png?raw=true" alt="all_hide=True" width="30%" />
   <img src="https://github.com/MustafaHilmiYAVUZHAN/CTkCalender/blob/main/screenshots/all_hide_False.png?raw=true" alt="all_hide=False" width="30%" />
+
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=20&color=gradient"> 
+
+  <img src="https://github.com/MustafaHilmiYAVUZHAN/CTkCalender/blob/main/screenshots/All.png?raw=true" alt="all_hide=False" width="91%" />
 </div>
 
 ## Features
