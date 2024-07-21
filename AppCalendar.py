@@ -12,7 +12,7 @@ class new_toplevel(CTkToplevel):
         set_default_color_theme(path.join(path.dirname(path.realpath(__file__)), 'extreme.json'))
         self.configure(takefocus=False)
         if topmost:
-            new_toplevel.attributes("-topmost", True)
+            self.attributes("-topmost", True)
         if all_hide is not None:
             if all_hide:
                 all_stuffs.hide(self)
