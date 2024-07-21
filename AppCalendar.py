@@ -27,10 +27,13 @@ class new_toplevel(CTkToplevel):
 
         #print(self.winfo_name())
 class CalendarApp(new_toplevel):
-    def __init__(self, all_hide : Optional[bool] = None, topmost : bool = False, print : bool = False, command: Optional[Callable] = None, current_day_color : str="#1050d0", current_day_color_hover : str="#0c2f60",day_color : str="#090909", day_color_hover : str="#333333"):
+    def __init__(self,position : str = None, all_hide : Optional[bool] = None, topmost : bool = False, print : bool = False, command: Optional[Callable] = None, current_day_color : str="#1050d0", current_day_color_hover : str="#0c2f60",day_color : str="#090909", day_color_hover : str="#333333"):
         super().__init__(all_hide=all_hide,topmost=topmost)
         self.title("Calendar")
-        self.geometry("210x250")
+        if position is None:
+            self.geometry("210x250")
+        else:
+            self.geometry(f"210x250+{position}")
         self.now = datetime.now()
         self.current_year = self.now.year
         self.current_month = self.now.month
@@ -65,10 +68,14 @@ class CalendarApp(new_toplevel):
         
         self.update_timer = None  # Timer for delaying the update
         self.update_delay = 100  # Delay in milliseconds
-        
+        if all_hide is None:
+            self.bind("<FocusOut>", lambda event: self.after(700, lambda: self.destroy() if self.focus_get() != self else None))
+            self.after(200,self.focus)
+
+
+    
         self.setup_day_names()
         self.update_calendar()
-
     def setup_day_names(self):
         day_names = calendar.weekheader(2).split()
         for j, day_name in enumerate(day_names):
@@ -128,5 +135,13 @@ class CalendarApp(new_toplevel):
 
 
 if __name__ == "__main__":
-    app = CalendarApp()
+    
+    
+    app1 = CalendarApp(all_hide=True,position="650+500")
+    
+    app2 = CalendarApp(all_hide=False,position="900+500")
+    app = CalendarApp(position="400+500")
+    app2.mainloop()
+    
+    app1.mainloop()
     app.mainloop()
